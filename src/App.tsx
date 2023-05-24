@@ -13,10 +13,14 @@ const App = () => {
     ]);
 
     const addNewTask =(taskText:string)=>{
-        const tasksCopy = [...tasks];
-        const taskCopy = {task:taskText,id:`${new Date()}${Math.random()}`};
-        tasksCopy.push(taskCopy);
-        setTasks(tasksCopy);
+        if(taskText){
+            const tasksCopy = [...tasks];
+            const taskCopy = {task:taskText,id:`${new Date()}${Math.random()}`};
+            tasksCopy.push(taskCopy);
+            setTasks(tasksCopy);
+        }else{
+            alert('Что то пошло не так')
+        }
     };
 
     const deleteTask= (id:string)=>{
