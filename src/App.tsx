@@ -6,18 +6,19 @@ import TaskForm from "./components/taskForm/TaskForm";
 const App = () => {
     const [currentTask,setCurrentTask]= useState('');
 
-    const [tasks,setTasks]=useState([
+    const [tasks,setTasks]= useState([
             {task:'Buy milk', id:`${new Date()}${Math.random()}`},
             {task:'Walk with dog', id:`${new Date()}${Math.random()}`},
             {task:'Do homework', id:`${new Date()}${Math.random()}`},
     ]);
 
-    const addNewTask =(taskText:string)=>{
-        if(taskText){
+    const addNewTask =()=>{
+        if(currentTask){
             const tasksCopy = [...tasks];
-            const taskCopy = {task:taskText,id:`${new Date()}${Math.random()}`};
+            const taskCopy = {task:currentTask,id:`${new Date()}${Math.random()}`};
             tasksCopy.push(taskCopy);
             setTasks(tasksCopy);
+            setCurrentTask('');
         }else{
             alert('Что то пошло не так')
         }
@@ -41,13 +42,18 @@ const App = () => {
         }
     };
 
+    const handleClick = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+    };
+
   return (
     <div className="App">
         <TaskForm
+            onSubmitForm = {handleClick}
             currentTask={currentTask}
             changeCurrentTask={(event: React.ChangeEvent<HTMLInputElement>)=>
             {setCurrentTask(event.currentTarget.value)}}
-            onButtonClick={() => addNewTask(currentTask)}
+            onButtonClick={() => addNewTask()}
         />
 
         {tasks.map(task=>{
