@@ -1,14 +1,16 @@
 import React from 'react';
 
 interface ITaskForm extends React.PropsWithChildren {
-    task: string;
+    currentTask: string;
+    changeCurrentTask: React.ChangeEventHandler<HTMLInputElement>;
+    onButtonClick:React.MouseEventHandler;
 }
 const TaskForm:React.FC<ITaskForm>= (props) => {
     return (
-            <form className="taskForm">
-                <input type="text" value={props.task}/>
-                <button>Add</button>
-            </form>
+            <div className="taskForm">
+                <input type="text" value={props.currentTask} onChange={props.changeCurrentTask}/>
+                <button onClick={props.onButtonClick}>Add</button>
+            </div>
     );
 };
 

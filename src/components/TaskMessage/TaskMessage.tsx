@@ -2,6 +2,7 @@ import React from 'react';
 
 interface ITaskMessage{
     newTask:string;
+    onClickDeleteElement:React.MouseEventHandler;
 }
 const TaskMessage:React.FC<ITaskMessage>= (props) => {
     return (
@@ -12,7 +13,7 @@ const TaskMessage:React.FC<ITaskMessage>= (props) => {
                     <label htmlFor="Done">Done</label>
                     <input id="Done" type="checkbox"/>
                 </div>
-                <button>Delete</button>
+                <button onClick={props.onClickDeleteElement}>Delete</button>
             </div>
 
         </div>

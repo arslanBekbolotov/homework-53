@@ -10,10 +10,11 @@
   justify-content: space-between;
   border: 2px solid #ccc;
   margin-bottom: 30px;
+  padding: 0 20px;
 }
 
 .taskForm{
-  padding: 5px;
+  padding: 5px 15px;
 }
 
 .taskForm button , .taskMessage button , .taskForm input, .taskMessageButtons label{
@@ -45,7 +46,4 @@
   margin-right: 20px;
 }
 
-.taskMessage p{
-  padding: 0 20px;
-}
 
