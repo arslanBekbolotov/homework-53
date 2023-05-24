@@ -1,0 +1,51 @@
+.App {
+  text-align: center;
+  max-width: 800px;
+  margin: 20px auto 0;
+}
+
+.taskForm , .taskMessage{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #ccc;
+  margin-bottom: 30px;
+}
+
+.taskForm{
+  padding: 5px;
+}
+
+.taskForm button , .taskMessage button , .taskForm input, .taskMessageButtons label{
+  padding: 5px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.taskForm input{
+  width: 60%;
+}
+
+.taskMessageButtons{
+  display: flex;
+  align-items: center;
+}
+
+.taskMessageButtons input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  margin: 10px 0 0 20px;
+}
+
+.taskMessageButtons label{
+  position: relative;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.taskMessage p{
+  padding: 0 20px;
+}
+
